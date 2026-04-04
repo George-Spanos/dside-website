@@ -55,7 +55,3 @@ open index.html
 The site is a single HTML file. It can be deployed anywhere that serves static files: GitHub Pages, Netlify, Vercel, Cloudflare Pages, or a plain web server.
 
 For GitHub Pages, enable it in the repo settings under Pages → Source → Deploy from branch → `main` → `/ (root)`.
-
-## License
-
-All rights reserved © 2026 dside studio.
