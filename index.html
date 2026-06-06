@@ -18,7 +18,12 @@
     <nav>
       <div class="container">
         <a href="#hero" aria-label="dside studio home"><span class="vinyl-d"><b>d</b></span>side <span class="muted">studio</span></a>
-        <ul>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul id="nav-menu">
           <li><a href="#team">Team</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -189,5 +194,22 @@
     </div>
   </footer>
 
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      toggle.classList.toggle('active');
+      navMenu.classList.toggle('nav-open');
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.classList.remove('active');
+        navMenu.classList.remove('nav-open');
+      });
+    });
+  </script>
 </body>
 </html>
